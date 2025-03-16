@@ -22,8 +22,12 @@ export type TMovie = {
   currentSupervisorDistricts: string;
 };
 
-export type TGetMoviesResponse = {
-  status: string;
-  data: TMovie[] | null;
-  error: string | null;
+export type TMovieFilters = {
+  title?: string;
+  productionCompany?: string;
+  distributor?: string;
+  director?: string;
+  writer?: string;
+  releaseYear?: string;
+  analysisNeighborhood?: string;
 };

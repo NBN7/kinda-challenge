@@ -60,7 +60,7 @@ app.get('/api/movies', async (req, res) => {
     const director = req.query.director?.toLowerCase() || '';
     const writer = req.query.writer?.toLowerCase() || '';
     const releaseYear = req.query.releaseYear?.toLowerCase() || '';
-    const neighborhood = req.query.neighborhood?.toLowerCase() || '';
+    const analysisNeighborhood = req.query.analysisNeighborhood?.toLowerCase() || '';
 
     const movies = await loadMoviesData();
 
@@ -72,7 +72,7 @@ app.get('/api/movies', async (req, res) => {
         (!director || (movie.director && movie.director.toLowerCase().includes(director))) &&
         (!writer || (movie.writer && movie.writer.toLowerCase().includes(writer))) &&
         (!releaseYear || (movie.releaseYear && movie.releaseYear.toLowerCase().includes(releaseYear))) &&
-        (!neighborhood || (movie.analysisNeighborhood && movie.analysisNeighborhood.toLowerCase().includes(neighborhood)))
+        (!analysisNeighborhood || (movie.analysisNeighborhood && movie.analysisNeighborhood.toLowerCase().includes(analysisNeighborhood)))
       );
     });
 
