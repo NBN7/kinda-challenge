@@ -29,9 +29,11 @@ export const MapComponent = ({ movies }: MapComponentProps) => {
           return (
             <Marker key={index} position={[lat, lon]}>
               <Popup>
-                <strong>{movie.title}</strong> ({movie.releaseYear}) <br />
-                <em>{movie.locations}</em> <br />
-                Dirigida por: {movie.director}
+                <p>
+                  <span className="font-semibold">{movie.title}</span> ({movie.releaseYear})
+                </p>
+                <p>{movie.locations}</p>
+                <p>Directed by {movie.director}</p>
               </Popup>
             </Marker>
           );

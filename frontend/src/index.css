@@ -82,3 +82,18 @@
     @apply bg-background text-foreground m-4;
   }
 }
+
+*::-webkit-scrollbar {
+  height: 14px;
+  width: 14px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: #27272a;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #e4e4e7;
+  border: 4px solid #27272a;
+}

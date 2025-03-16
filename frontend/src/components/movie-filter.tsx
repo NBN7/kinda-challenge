@@ -1,9 +1,6 @@
 "use client";
 
-import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
-
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -18,6 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Check, ChevronDown } from "lucide-react";
 
 interface MovieFiltersProps {
   filterKey: string;
@@ -27,13 +25,13 @@ interface MovieFiltersProps {
   onChange: (value: string | null) => void;
 }
 
-export function MovieFilters({
+export const MovieFilter = ({
   formattedLabel,
   options,
   value,
   onChange,
-}: MovieFiltersProps) {
-  const [open, setOpen] = React.useState(false);
+}: MovieFiltersProps) => {
+  const [open, setOpen] = useState(false);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -41,11 +39,12 @@ export function MovieFilters({
         <Button
           variant="outline"
           role="combobox"
-          aria-expanded={open}
           className="w-[180px] justify-between"
         >
-          {value ? value : formattedLabel}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <p className="w-[180px] overflow-hidden truncate text-start">
+            {value ? value : formattedLabel}
+          </p>
+          <ChevronDown className="ml-2 size-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[180px] p-0">
@@ -68,10 +67,9 @@ export function MovieFilters({
                   }}
                 >
                   <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
+                    className={`mr-2 size-4 ${
                       value === option ? "opacity-100" : "opacity-0"
-                    )}
+                    }`}
                   />
                   {option}
                 </CommandItem>
@@ -82,4 +80,4 @@ export function MovieFilters({
       </PopoverContent>
     </Popover>
   );
-}
+};
