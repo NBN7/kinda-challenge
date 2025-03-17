@@ -6,6 +6,26 @@ interface MapComponentProps {
   movies: TMovie[] | [];
 }
 
+const renderMarker = (movie: TMovie, index: number) => {
+  const lat = parseFloat(movie.latitude);
+  const lon = parseFloat(movie.longitude);
+
+  if (isNaN(lat) || isNaN(lon)) return null;
+
+  return (
+    <Marker key={index} position={[lat, lon]}>
+      <Popup>
+        <p>
+          <span className="font-semibold">{movie.title}</span> (
+          {movie.releaseYear})
+        </p>
+        <p>{movie.locations}</p>
+        <p>Directed by {movie.director}</p>
+      </Popup>
+    </Marker>
+  );
+};
+
 export const MapComponent = ({ movies }: MapComponentProps) => {
   const center = [37.7749, -122.4194]; // San Francisco
 
@@ -20,24 +40,7 @@ export const MapComponent = ({ movies }: MapComponentProps) => {
 
       {movies
         .filter((movie) => movie.latitude && movie.longitude)
-        .map((movie, index) => {
-          const lat = parseFloat(movie.latitude);
-          const lon = parseFloat(movie.longitude);
-
-          if (isNaN(lat) || isNaN(lon)) return null; // no agrego marcadores sin coordenadas
-
-          return (
-            <Marker key={index} position={[lat, lon]}>
-              <Popup>
-                <p>
-                  <span className="font-semibold">{movie.title}</span> ({movie.releaseYear})
-                </p>
-                <p>{movie.locations}</p>
-                <p>Directed by {movie.director}</p>
-              </Popup>
-            </Marker>
-          );
-        })}
+        .map(renderMarker)}
     </MapContainer>
   );
 };
