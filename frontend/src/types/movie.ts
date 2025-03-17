@@ -21,13 +21,3 @@ export type TMovie = {
   analysisNeighborhoods: string;
   currentSupervisorDistricts: string;
 };
-
-export type TMovieFilters = {
-  title?: string;
-  productionCompany?: string;
-  distributor?: string;
-  director?: string;
-  writer?: string;
-  releaseYear?: string;
-  analysisNeighborhood?: string;
-};

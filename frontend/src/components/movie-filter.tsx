@@ -53,7 +53,7 @@ export const MovieFilter = ({
             placeholder={`Search ${formattedLabel.toLowerCase()}...`}
           />
           <CommandList>
-            <CommandEmpty>No se encontraron resultados.</CommandEmpty>
+            <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
               {options.map((option) => (
                 <CommandItem

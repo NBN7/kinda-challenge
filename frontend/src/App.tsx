@@ -7,23 +7,15 @@ import { formatKey } from "@/utils/format-key";
 import { MapComponent } from "@/components/map/map-component";
 import { HomeSkeleton } from "@/components/home-skeleton";
 import { MovieFilter } from "@/components/movie-filter";
-import type { TMovieFilters, TMovie } from "@/types/movie";
+import { FILTERS } from "@/constants/filters";
+import type { TMovie } from "@/types/movie";
+import type { TFilter } from "@/types/filters";
 
 function App() {
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string | null>>({});
   const { isLoading, isError, data } = useGetMovies();
 
-  const filters = useMemo(() => {
-    return getUniqueFilters(data || [], [
-      "title",
-      "productionCompany",
-      "distributor",
-      "director",
-      "writer",
-      "releaseYear",
-      "analysisNeighborhood",
-    ]);
-  }, [data]);
+  const filters = useMemo(() => getUniqueFilters(data || [], FILTERS), [data]);
 
   const handleFilterChange = useCallback(
     (filterKey: string, value: string | null) => {
@@ -53,7 +45,7 @@ function App() {
       <div className="grid grid-cols-2 place-items-center gap-2 sm:flex sm:flex-wrap">
         {Object.keys(filters).map((f) => {
           const formattedFilter = formatKey(f);
-          const values = filters[f as keyof TMovieFilters];
+          const values = filters[f as TFilter];
 
           return (
             <MovieFilter
