@@ -34,7 +34,7 @@ export const MapComponent = ({ movies }: MapComponentProps) => {
       // @ts-expect-error no toma la prop center pero funciona y es necesaria
       center={center}
       zoom={12}
-      className="w-full z-10 h-[600px] sm:h-[800px]"
+      className="w-full z-10 h-[600px] rounded sm:h-[800px]"
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

@@ -39,7 +39,7 @@ export const MovieFilter = ({
         <Button
           variant="outline"
           role="combobox"
-          className="w-[180px] justify-between"
+          className="w-full justify-between rounded sm:w-[180px]"
         >
           <p className="w-[180px] overflow-hidden truncate text-start">
             {value ? value : formattedLabel}

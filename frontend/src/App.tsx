@@ -50,7 +50,7 @@ function App() {
 
   return (
     <main>
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-2 place-items-center gap-2 sm:flex sm:flex-wrap">
         {Object.keys(filters).map((f) => {
           const formattedFilter = formatKey(f);
           const values = filters[f as keyof TMovieFilters];
