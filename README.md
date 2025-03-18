@@ -23,7 +23,7 @@ Para instalar el proyecto seguí estos pasos:
 Para correr el servidor de backend y el frontend a la vez, ejecutá:
 
 ```sh
-npm run dev
+npm run start
 ```
 
 Esto iniciará:
