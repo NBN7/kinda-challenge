@@ -1,6 +1,35 @@
-# Kinda challenge
+# Kinda Challenge
 
-Este proyecto es un challenge para KindaLab el cual consiste en visualizar películas filmadas en San Francisco. Utiliza React y TypeScript para el frontend y Express para el backend el cual consume un archivo CSV con información sobre las películas para mostrar datos de forma dinámica en el frontend.
+Este proyecto es un challenge para KindaLab el cual consiste en visualizar películas filmadas en San Francisco. Utiliza React, TypeScript y Tailwind css para el frontend y Express para el backend, el cual consume un archivo CSV con información sobre las películas para mostrar datos de forma dinámica en el frontend.
+
+## Instalación
+
+Para instalar el proyecto seguí estos pasos:
+
+1. Cloná el repo:
+
+   ```sh
+   git clone https://github.com/NBN7/kinda-challenge
+   cd kinda-challenge
+   ```
+
+2. Instalá las dependencias del monorepo (root, backend y frontend):
+   ```sh
+   npm run install:all
+   ```
+
+## Ejecución
+
+Para correr el servidor de backend y el frontend a la vez, ejecutá:
+
+```sh
+npm run dev
+```
+
+Esto iniciará:
+
+- El **backend** en `http://localhost:5000`
+- El **frontend** en `http://localhost:3000`
 
 # DevOps
 
@@ -15,11 +44,13 @@ Este proyecto es un challenge para KindaLab el cual consiste en visualizar pelí
 ## 2. **Automatización de CI/CD**
 
 ### CI
+
 - **GitHub Actions**: Configurar workflows que ejecuten pruebas automáticas cada vez que se haga un commit en el repositorio.
 - **Tests Automáticos**: Ejecutar pruebas unitarias y de integración.
 - **Linter**: Verificar la calidad del código y el cumplimiento de las convenciones.
 
 ### CD
+
 - **Vercel / Netlify / Heroku**: Usar plataformas como Vercel o Netlify para automatizar el despliegue en un entorno de producción. (Vercel es mi recomendación).
 - **Despliegue en Staging**: Desplegar en un entorno de prueba para asegurar que todo funcione correctamente antes de realizar el despliegue final en producción.
 
@@ -30,9 +61,9 @@ Este proyecto es un challenge para KindaLab el cual consiste en visualizar pelí
 ## 4. **Contenedores**
 
 ### Docker
+
 - **Docker**: Crear imágenes de la aplicación para garantizar que se ejecute de la misma forma en todos los entornos.
 - **Docker Compose**: Usar Docker Compose para definir y gestionar multi-contenedores en el desarrollo local.
-
 
 ## Conclusión
 
