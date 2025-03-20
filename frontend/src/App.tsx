@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo } from "react";
 import { useGetMovies } from "@/hooks/use-get-movies";
 import { getUniqueFilters } from "@/utils/get-unique-filters";
 import { formatKey } from "@/utils/format-key";
-import { MapComponent } from "@/components/map/map-component";
+import { MapComponent } from "@/components/map-component";
 import { HomeSkeleton } from "@/components/home-skeleton";
 import { MovieFilter } from "@/components/movie-filter";
 import { FILTERS } from "@/constants/filters";
