@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useCallback, useMemo } from "react";
 import { useGetMovies } from "@/hooks/use-get-movies";
 import { getUniqueFilters } from "@/utils/get-unique-filters";
